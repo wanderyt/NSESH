@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <title>NSESH</title>
+        <script src="js/lib/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src="js/lib/Xslider.js" type="text/javascript"></script>
+        <style type="text/css">
+            body{margin:0 auto; text-align:center; color:#616161; font: 12px/1.5 arial, \5b8b\4f53;}
+            ul,p{margin:0; padding:0;}
+            li{list-style-type:none;}
+            img{border:0;}
+            :focus{outline:0;}
+            h1{color:#000; margin-bottom:30px; font-size:30px;}
+            h2{color:#000; background-color:#eee; width:540px; margin-left:auto; margin-right:auto; text-align:left; padding-left:5px;}
+            a:link,a:visited{color:#333; text-decoration:none;}
+            a:hover{color:#000;}
+            
+            a.abtn{
+                position:absolute;
+                top:4px;
+                display:block;
+                height:132px;
+                width:6px;
+                overflow:hidden;
+                text-indent:-20000px;
+                background:url(images/arrow3.gif) 0px center no-repeat;
+            }
+            a.aleft{
+                left:7px;
+            }
+            a.agrayleft{
+                cursor:default;
+                background-position:-12px center;
+            }
+            a.aright{
+                right:7px;
+                background-position:-6px center;
+            }
+            a.agrayright{
+                cursor:default;
+                background-position:-18px center;
+            }
+            
+            .productshow{
+                width:540px;
+                height:132px;
+                padding:4px 0;
+                margin:20px auto;
+                position:relative;
+                text-align:center;
+                font-family:微软雅黑, 黑体;
+                background:url(images/productshow.png) no-repeat;
+            }
+            .productshow .scrollcontainer{
+                width:486px;
+                height:130px;
+                overflow:hidden;
+                position:relative;
+                margin:0 auto;
+            }
+            .productshow .scrollcontainer ul{
+                width:20000px;
+                position:absolute;
+                left:0px;
+                top:0px;
+            }
+            .productshow .scrollcontainer li{
+                float:left;
+                width:162px;
+                height:130px;
+                text-align:center;
+            }
+            .productshow .scrollcontainer li.last{
+                background:none;
+            }
+            .productshow .scrollcontainer li div{
+                height:95px;
+                width:162px;
+                overflow:hidden;
+                text-align:center;
+            }
+            .productshow .scrollcontainer a:hover img{
+                filter:alpha(opacity=86);-moz-opacity:0.86;opacity:0.86;
+            }
+            .productshow .scrollcontainer li p{
+                margin:0;
+                line-height:32px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="productshow">
+            <div class="scrollcontainer">
+                <ul>
+                    <li>
+                        <div><a href="###"><img src="images/temp_pro2.jpg" alt="" /></a></div>
+                        <p><a href="">1.家电彩涂钢板</a></p>
+                    </li>
+                    <li>
+                        <div><a href="###"><img src="images/temp_pro2.jpg" alt="" /></a></div>
+                        <p><a href="">2.幻彩变色彩涂钢板</a></p>
+                    </li>
+                    <li>
+                        <div><a href="###"><img src="images/temp_pro2.jpg" alt="" /></a></div>
+                        <p><a href="">3.环保彩涂钢板</a></p>
+                    </li>
+                    <li>
+                        <div><a href="###"><img src="images/temp_pro2.jpg" alt="" /></a></div>
+                        <p><a href="">4.家电彩涂钢板</a></p>
+                    </li>
+                </ul>
+            </div>
+            <a class="abtn aleft" href="#left">左移</a>
+            <a class="abtn aright" href="#right">右移</a>
+        </div>
+        
+        <script type="text/javascript">
+            $(".productshow").Xslider({
+                unitdisplayed:3,
+                numtoMove:3
+            });
+        </script>
+        
+    </body>
+</html>

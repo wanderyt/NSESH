@@ -1,0 +1,99 @@
+.bulletinArea {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    &>.ui-tabs-vertical {
+        width: 100%;
+        height: 100%;
+        float: left;
+        padding: 0px;
+        position: relative;
+        top: -75px;
+        
+        &>.ui-tabs-nav {
+            float: left;
+            list-style: none;
+            position: relative;
+            top: 1%;
+            margin: 0px;
+            padding: 0px;
+            width: 15%;
+            height: 99%;
+            
+            &>li {
+                width: 100%;
+                height: 40px;
+                text-align: center;
+                border-bottom: 1px solid #ccc;
+                border-left: 2px solid #000;
+                
+                &>a {
+                    height: 40px;
+                    display: block;
+                    color: #000;
+                    line-height: 40px;
+                    background: url("http://localhost:8088/NSESH/img/ntri.gif") no-repeat 7px 1.2em;
+                }
+                
+                &>a:hover {
+                    color: #3e66aa;
+                    font-weight: bold;
+                    background: url("http://localhost:8088/NSESH/img/atri.gif") no-repeat 7px 1.2em;
+                }
+            }
+            
+            &>li:last-child {
+                border-bottom: 10px solid #000;
+            }
+            
+            &>.ui-tabs-active {
+                &>a {
+                    color: #3e66aa;
+                    font-weight: bold;
+                    background: url("http://localhost:8088/NSESH/img/atri.gif") no-repeat 7px 1.2em;
+                }
+            }
+        }
+        
+        &>.ui-tabs-panel {
+            float: left;
+            width: 80%;
+            position: relative;
+            left: 4%;
+            top: 1%;
+            height: 99%;
+            margin: 0px;
+            padding: 0px 3px;
+        }
+    }
+}
+
+.detailArea() {
+    width: 100%;
+    height: 100%;
+}
+
+.detailTitle() {
+    color: #000;
+    font-size: 153.9%;
+    background: url("http://localhost:8088/NSESH/img/title.gif") no-repeat 0 0;
+    background-size: 100%;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-indent: 30px;
+}
+
+.detailDetail() {
+    position: relative;
+    top: 4%;
+    width: 100%;
+    height: 450px;
+    font-size: 14px;
+    font-family: Verdana, Arial, "宋体", sans-serif;
+    line-height: 1.6;
+    color: #444444;
+    text-indent: 28px;
+}
