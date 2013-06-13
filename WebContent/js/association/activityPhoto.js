@@ -15,21 +15,21 @@ $(function() {
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             var photoTypes = data,
-                i = 0,
-                len = photoTypes.length,
                 $li,
                 $photoDiv,
                 $titleDiv,
                 $ui = $(".photosUl");
-            for(; i < len; i++) {
-                $li = $("<li></li>").addClass("photoTypeLi");
-                $photoDiv = $("<div></div>").addClass("photoDiv");
-                $photoDiv.css("background-image", photoTypes[i].photoURL);
-                $titleDiv = $("<div></div>").addClass("photoTitleDiv");
-                $titleDiv.text(photoTypes[i].photoType);
-                $li.append($photoDiv);
-                $li.append($titleDiv);
-                $ui.append($li);
+            for(props in photoTypes) {
+                if(photoTypes.hasOwnProperty(props)) {
+                    $li = $("<li></li>").addClass("photoTypeLi");
+                    $photoDiv = $("<img/>").addClass("photoDiv");
+                    $photoDiv.attr("src", "file:///" + photoTypes[props]);
+                    $titleDiv = $("<div></div>").addClass("photoTitleDiv");
+                    $titleDiv.text(props);
+                    $li.append($photoDiv);
+                    $li.append($titleDiv);
+                    $ui.append($li);
+                }
             }
         }
     });

@@ -55,7 +55,7 @@ public class ActivityPhotoDAO {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 ActivityPhotoVO photoVO = new ActivityPhotoVO();
-                photoTypesList.add(rs.getString(0));
+                photoTypesList.add(rs.getString(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,12 +75,12 @@ public class ActivityPhotoDAO {
         String sql = "select * from activityPhoto where photoCategory = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(0, type);
+            ps.setString(1, type);
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 ActivityPhotoVO photoVO = new ActivityPhotoVO();
-                photoVO.setPhotoCategory(rs.getString(0));
-                photoVO.setPhotoURL(rs.getString(1));
+                photoVO.setPhotoCategory(rs.getString(1));
+                photoVO.setPhotoURL(rs.getString(2));
                 photoList.add(photoVO);
             }
         } catch (SQLException e) {
@@ -101,11 +101,11 @@ public class ActivityPhotoDAO {
         String sql = "select * from activityPhoto where photoCategory = ? limit 0,1";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(0, type);
+            ps.setString(1, type);
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
-                photoVO.setPhotoCategory(rs.getString(0));
-                photoVO.setPhotoURL(rs.getString(1));
+                photoVO.setPhotoCategory(rs.getString(1));
+                photoVO.setPhotoURL(rs.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
