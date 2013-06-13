@@ -4,7 +4,7 @@
 var nsesh = nsesh || {};
 
 $(function() {
-    //achieve data
+    //achieve photo types
     $.ajax({
         url: 'BusinessOut.do',
         type: "POST",

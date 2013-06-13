@@ -10,13 +10,21 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-    <servlet> 
-    <servlet-name>BusinessOutAction</servlet-name> 
-    <servlet-class>nsesh.servlet.BusinessOutAction</servlet-class> 
-  </servlet> 
+  <servlet>
+    <servlet-name>BusinessOutAction</servlet-name>
+    <servlet-class>nsesh.servlet.BusinessOutAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PhotoTypeAction</servlet-name>
+    <servlet-class>nsesh.servlet.PhotoTypeAction</servlet-class>
+  </servlet>
 
-  <servlet-mapping> 
+    <servlet-mapping>
     <servlet-name>BusinessOutAction</servlet-name> 
     <url-pattern>/BusinessOut.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PhotoTypeAction</servlet-name>
+    <url-pattern>/getPhotoType.do</url-pattern>
   </servlet-mapping>
 </web-app>
