@@ -18,13 +18,21 @@
     <servlet-name>PhotoTypeAction</servlet-name>
     <servlet-class>nsesh.servlet.PhotoTypeAction</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>GetPhotoByTypeAction</servlet-name>
+    <servlet-class>nsesh.servlet.GetPhotoByTypeAction</servlet-class>
+  </servlet>
 
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>BusinessOutAction</servlet-name> 
     <url-pattern>/BusinessOut.do</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>PhotoTypeAction</servlet-name>
     <url-pattern>/getPhotoType.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetPhotoByTypeAction</servlet-name> 
+    <url-pattern>/getPhotoByType.do</url-pattern>
   </servlet-mapping>
 </web-app>

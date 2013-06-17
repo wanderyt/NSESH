@@ -15,21 +15,25 @@
           list-style: none;
     
           &>.photoTypeLi {
-            width: 230px;
+            width: 210px;
             height: 200px;
             margin: 0 0 40px 20px;
             float: left;
             background-color: #fff;
             position: relative;
             box-shadow: 0 1px 1px #eee;
+            pointer: cursor;
     
             &>.photoDiv {
-              //background-position: center center;
-              //background-size: 100% 85%;
-              //background-repeat: no-repeat;
               float: left;
               width: 100%;
               height: 85%;
+              text-indent: 0px;
+              &>img {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+              }
             }
     
             &>.photoTitleDiv {
@@ -42,5 +46,32 @@
             }
           }
         }
+        
+        & .photosDisplay {
+            float: left;
+            margin: 0 0 0 -40px;
+            list-style: none;
+            
+            &>.photoLi {
+                width: 210px;
+                height: 200px;
+                margin: 0 0 40px 20px;
+                float: left;
+                background-color: #fff;
+                position: relative;
+                box-shadow: 0 1px 1px #eee;
+                pointer: cursor;
+            }
+            
+            &>.photoDisplayDiv {
+                float: left;
+                width: 100%;
+                height: 85%;
+            }
+        }
     }
+}
+
+.hidden {
+  display: none;
 }
