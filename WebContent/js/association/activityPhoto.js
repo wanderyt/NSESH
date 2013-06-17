@@ -4,9 +4,6 @@
 var nsesh = nsesh || {};
 
 $(function() {
-    $(".photosDisplay").addClass("hidden");
-    $(".photosUl").removeClass("hidden");
-
     $(".activityPhotoDetails").mCustomScrollbar({
         verticalScroll: true
     });
@@ -33,7 +30,7 @@ $(function() {
             }
 
             //add click event on lis of photo types
-            $(".photoTypeLi").click(function() {
+            $(".photoTypeLi").on("click", function() {
                 var selectLi = $(this).find(".photoTitleDiv").text();
                 $.ajax({
                     url: 'getPhotoByType.do?actType=' + selectLi,
@@ -41,67 +38,39 @@ $(function() {
                     dataType: "JSON",
                     contentType: "application/json; charset=utf-8",
                     success: function (data) {
-                        /*var content = [];
-                        var photoList = data.photos,
-                            j = 0,
-                            l = photoList.length;
-                        for(; j < l; j++) {
-                            var obj = {};
-                            obj.href = photoList[j];
-                            obj.title = "";
-                            content.push(obj);
-                        }
-                        that.find(".fancyBox").click(function() {
-                            $.fancybox.open(content, {
-                                padding : 0
-                            });
-                            return false;
-                        });*//*
-
-                        if(!that.find(".hidden")) {
-                            var $hiddenDiv = $("<div/>").addClass("hidden")
-                            that.find("a").after($hiddenDiv);
-                            var photoList = data.photos,
-                                j = 1,
-                                l = photoList.length;
-                            for(; j < l; j++) {
-                                $hiddenDiv = __createPhotoElement($hiddenDiv, photoList[j]);
-                            }
-                        }
-                        that.find(".fancyBox").attr('rel', 'gallery');
-                        that.find(".fancyBox").fancybox({
-                            padding : 0,
-                            maxWidth : 300,
-                            maxHeight : 300
-                        });*/
                         $(".photosDisplay").empty();
 
                         $(".photosUl").addClass("hidden");
-                        var photosList = data,
+                        var photosList = data.photos,
                             $photoul = $(".photosDisplay"),
                             $photoli,
+                            $photoa,
                             $photoImg,
                             j,
                             l = photosList.length;
                         for(j = 0; j < l; j++) {
                             $photoli = $("<li/>").addClass("photoLi");
+                            $photoa = $("<a/>").addClass("fancyBox").attr("href", photosList[j]);
                             $photoImg = $("<img/>");
                             $photoImg.attr("src", photosList[j]);
-                            $photoli.append($photoImg);
+                            $photoa.append($photoImg);
+                            $photoli.append($photoa);
                             $photoul.append($photoli);
                         }
                         $(".photosDisplay").removeClass("hidden");
+                        $(".clickBack").removeClass("hidden");
 
-                        $("img").click(function() {
-                            $(this).fancybox({
-                                maxHeight: 300,
-                                maxWidth: 400,
-                                helpers: {
-                                    title : {
-                                        type : 'float'
-                                    }
+                        $(".fancyBox").fancybox({
+                            helpers: {
+                                title : {
+                                    type : 'float'
                                 }
-                            });
+                            }
+                        });
+                        $(".clickBack").click(function() {
+                            $(".photosDisplay").addClass("hidden");
+                            $(".clickBack").addClass("hidden");
+                            $(".photosUl").removeClass("hidden");
                         });
                     }
                 });
@@ -112,7 +81,7 @@ $(function() {
     var __createPhotoElement = function($container, url) {
         var $photoDiv,
             $photoImg;
-        $photoDiv = $("<a/>").addClass("photoDiv").addClass("fancyBox");
+        $photoDiv = $("<a/>").addClass("photoDiv");
         $photoImg = $("<img/>");
         $photoImg.attr("src", url);
         $photoDiv.append($photoImg);
