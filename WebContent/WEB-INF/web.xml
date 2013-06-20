@@ -22,6 +22,10 @@
     <servlet-name>GetPhotoByTypeAction</servlet-name>
     <servlet-class>nsesh.servlet.GetPhotoByTypeAction</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>WeekScheduleAction</servlet-name>
+    <servlet-class>nsesh.servlet.WeekScheduleAction</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>BusinessOutAction</servlet-name> 
@@ -34,5 +38,9 @@
   <servlet-mapping>
     <servlet-name>GetPhotoByTypeAction</servlet-name> 
     <url-pattern>/getPhotoByType.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>WeekScheduleAction</servlet-name> 
+    <url-pattern>/getWeekSchedule.do</url-pattern>
   </servlet-mapping>
 </web-app>

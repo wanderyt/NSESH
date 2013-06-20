@@ -35,6 +35,8 @@ public class ActivityPhotoDAO {
                 photoVO.setPhotoURL(rs.getString(1));
                 photoList.add(photoVO);
             }
+            rs.close();
+            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -57,6 +59,8 @@ public class ActivityPhotoDAO {
                 ActivityPhotoVO photoVO = new ActivityPhotoVO();
                 photoTypesList.add(rs.getString(1));
             }
+            rs.close();
+            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -83,6 +87,8 @@ public class ActivityPhotoDAO {
                 photoVO.setPhotoURL(rs.getString(2));
                 photoList.add(photoVO);
             }
+            rs.close();
+            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -107,6 +113,8 @@ public class ActivityPhotoDAO {
                 photoVO.setPhotoCategory(rs.getString(1));
                 photoVO.setPhotoURL(rs.getString(2));
             }
+            rs.close();
+            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

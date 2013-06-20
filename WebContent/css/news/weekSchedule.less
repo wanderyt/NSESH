@@ -9,5 +9,47 @@
     
     &>.weekScheduleDetails {
         .detailDetail();
+        
+        & .scheduleTable {
+            width: 100%;
+            text-indent: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            font-weight: bold;
+            
+            & td, & th {
+                height: 30px;
+                line-height: 30px;
+                font-size: 16px;
+                text-overflow : ellipsis;
+                white-space : no-wrap;
+                overflow : hidden;
+            }
+            
+            & .tHeader {
+                width: 10%;
+                border-left: 0px;
+            }
+            
+            & .tTitle {
+                width: 12%;
+            }
+            
+            & .scheduleBody {
+                & .content {
+                    //border: 0px;
+                }
+                
+                & .hasSchedule {
+                    border-radius: 8px;
+                    font-weight: bold;
+                }
+                
+                & .tName {
+                    width: 10%;
+                    border-left: 0px;
+                }
+            }
+        }
     }
 }
